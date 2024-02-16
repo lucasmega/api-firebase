@@ -18,7 +18,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     FirebaseProvider provider;
 
     @Override
-    public void configure(HttpSecurity http) throws Exception {
+    protected void configure(HttpSecurity http) throws Exception {
         http.cors().and()
                 .csrf().disable()
                 .addFilterBefore(new FirebaseFilter(), UsernamePasswordAuthenticationFilter.class)
