@@ -10,8 +10,6 @@ WORKDIR /app
 
 COPY /target/api-firebase-0.0.1-SNAPSHOT.jar /app
 
-docker builder prune -a
-
 EXPOSE 8080
 
 CMD ["java", "-jar", "api-firebase-0.0.1-SNAPSHOT.jar"]
