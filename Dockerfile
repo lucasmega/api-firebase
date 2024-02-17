@@ -1,11 +1,15 @@
-FROM maven:3.8.4-openjdk-17-slim AS builder
-COPY src /home/app/src
-COPY pom.xml /home/app
-RUN mvn -f /home/app/pom.xml clean package
+FROM ubuntu:latest AS build
 
-#
-# Package stage
-#
-FROM openjdk:17
-#COPY --from=build /home/app/target/Falcon-0.0.1.jar /usr/local/lib/falcon.jar
-EXPOSE 8080
+RUN apt-get update
+RUN apt-get install openjdk-17-jdk -y
+COPY ..
+
+RUN apt-get install maven -y
+RUN mvn clean install
+
+FROM openjdk:17-jdk-slim
+
+EXPOSE 80
+COPY --from=build /target/api-firebase-0.0.1-SNAPSHOT.jar app.jar
+
+ENTRYPOINT ["java", "-jar", "app.jar"]
