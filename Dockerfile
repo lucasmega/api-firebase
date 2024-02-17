@@ -4,6 +4,9 @@ FROM openjdk:17
 
 RUN sudo apt-get update && sudo apt-get install -y maven
 
+RUN mvn clean package
+
+
 WORKDIR /app
 
 COPY target/api-firebase-0.0.1-SNAPSHOT.jar /app
