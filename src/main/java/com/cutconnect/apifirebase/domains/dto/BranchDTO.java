@@ -1,10 +1,12 @@
-package com.cutconnect.apifirebase.domains;
+package com.cutconnect.apifirebase.domains.dto;
 
+public class BranchDTO {
 
-public class User {
     private String id;
+
     private String name;
-    private String profession;
+
+    private AddressDTO address;
 
     public String getId() {
         return id;
@@ -22,11 +24,11 @@ public class User {
         this.name = name;
     }
 
-    public String getProfession() {
-        return profession;
+    public AddressDTO getAddress() {
+        return address;
     }
 
-    public void setProfession(String profession) {
-        this.profession = profession;
+    public void setAddress(AddressDTO address) {
+        this.address = address;
     }
 }

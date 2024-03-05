@@ -1,4 +1,4 @@
-package com.cutconnect.apifirebase.domains.DTO;
+package com.cutconnect.apifirebase.domains.dto;
 
 import java.time.LocalDateTime;
 
