@@ -1,6 +1,6 @@
 package com.cutconnect.apifirebase.controllers;
 
-import com.cutconnect.apifirebase.domains.form.UserForm;
+
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.cutconnect.apifirebase.services.UserService;
+import com.cutconnect.apifirebase.domains.form.UserForm;
 import com.cutconnect.apifirebase.domains.dto.BarberShopDTO;
 
 @RestController

@@ -35,7 +35,7 @@ public class UserService {
     }
 
 
-    private FavoriteBarbershop getUser() {
+    public FavoriteBarbershop getUser() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 
         try {
