@@ -1,7 +1,10 @@
 package com.cutconnect.apifirebase.services;
 
+import com.cutconnect.apifirebase.controllers.AuthenticationController;
 import com.cutconnect.apifirebase.domains.dto.ProductWithPriceDTO;
 import com.cutconnect.apifirebase.domains.form.FavoriteBarbershop;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -12,10 +15,12 @@ import java.util.List;
 @Service
 public class ProductService {
 
+    private static final Logger logger = LoggerFactory.getLogger(AuthenticationController.class);
+
+
     private final WebClient webClient;
     private final UserService userService;
 
-    @Autowired
     public ProductService(@Value("${domain.key}") String domain, UserService userService) {
         this.webClient = WebClient.create(domain + "/product");
         this.userService = userService;

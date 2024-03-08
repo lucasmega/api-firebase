@@ -21,7 +21,7 @@ public class ProductController {
         this.productService = productService;
     }
 
-    @RequestMapping(value = "/find-products-with-price", method = RequestMethod.GET)
+    @RequestMapping(value = "/find-products-by-email", method = RequestMethod.GET)
     public ResponseEntity<List<ProductWithPriceDTO>> findProductsByEmail() {
         try {
             return ResponseEntity.ok(productService.findProductsByEmail());

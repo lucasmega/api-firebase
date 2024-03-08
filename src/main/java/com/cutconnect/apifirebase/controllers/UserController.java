@@ -35,7 +35,7 @@ public class UserController {
     @RequestMapping(value = "/register", method = RequestMethod.GET)
     public ResponseEntity<Void> save() {
         try {
-            this.userService.save(new UserForm());
+            this.userService.register(new UserForm());
             return ResponseEntity.noContent().build();
         } catch (Exception e) {
             throw new IllegalArgumentException("Não foi possível criar o usuário" + e);

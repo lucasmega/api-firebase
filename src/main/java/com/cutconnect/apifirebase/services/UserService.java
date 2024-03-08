@@ -71,5 +71,19 @@ public class UserService {
                 .block();
     }
 
+    public void register(UserForm userForm) {
+
+        FavoriteBarbershop user = getUser();
+        userForm.setEmail(user.getEmail());
+        userForm.setId(user.getUid());
+
+        webClient.post()
+                .uri("/register")
+                .body(Mono.just(userForm), UserForm.class)
+                .retrieve()
+                .toBodilessEntity()
+                .block();
+    }
+
 
 }
