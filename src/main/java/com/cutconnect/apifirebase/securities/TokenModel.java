@@ -1,7 +1,6 @@
-package com.cutconnect.apifirebase.domains;
+package com.cutconnect.apifirebase.securities;
 
 import org.springframework.security.authentication.AbstractAuthenticationToken;
-
 
 public class TokenModel extends AbstractAuthenticationToken {
 

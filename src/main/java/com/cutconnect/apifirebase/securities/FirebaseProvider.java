@@ -7,7 +7,6 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.authentication.AuthenticationProvider;
 
-import com.cutconnect.apifirebase.domains.TokenModel;
 import com.cutconnect.apifirebase.configuration.FirebaseConfig;
 
 @Component

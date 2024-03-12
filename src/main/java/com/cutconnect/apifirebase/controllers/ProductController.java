@@ -1,5 +1,6 @@
 package com.cutconnect.apifirebase.controllers;
 
+import com.cutconnect.apifirebase.domains.dto.ProductDataDTO;
 import com.cutconnect.apifirebase.domains.dto.ProductWithPriceDTO;
 import com.cutconnect.apifirebase.services.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,6 +28,15 @@ public class ProductController {
             return ResponseEntity.ok(productService.findProductsByEmail());
         } catch (Exception e) {
             throw new IllegalArgumentException("Não foi possível buscar os produtos com preços: ", e);
+        }
+    }
+
+    @RequestMapping(value = "/find-products-by-account", method = RequestMethod.GET)
+    public ResponseEntity<List<ProductDataDTO>> findProductsByAccount() {
+        try {
+            return ResponseEntity.ok(productService.findProductsByAccount());
+        } catch (Exception e) {
+            throw new IllegalArgumentException("Não foi possível buscar os produtos: ", e);
         }
     }
 }
