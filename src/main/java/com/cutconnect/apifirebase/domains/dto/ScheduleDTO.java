@@ -1,23 +1,23 @@
 package com.cutconnect.apifirebase.domains.dto;
 
-import java.time.LocalDateTime;
-
 public class ScheduleDTO {
 
-    private Long idAppointment;
+    private String id;
 
     private ProfessionalDTO professional;
 
-    private BranchDTO branch;
+    private String date;
 
-    private LocalDateTime dateTime;
+    private String time;
 
-    public Long getIdAppointment() {
-        return idAppointment;
+    private String productId;
+
+    public String getId() {
+        return id;
     }
 
-    public void setIdAppointment(Long idAppointment) {
-        this.idAppointment = idAppointment;
+    public void setId(String id) {
+        this.id = id;
     }
 
     public ProfessionalDTO getProfessional() {
@@ -28,19 +28,27 @@ public class ScheduleDTO {
         this.professional = professional;
     }
 
-    public BranchDTO getBranch() {
-        return branch;
+    public String getDate() {
+        return date;
     }
 
-    public void setBranch(BranchDTO branch) {
-        this.branch = branch;
+    public void setDate(String date) {
+        this.date = date;
     }
 
-    public LocalDateTime getDateTime() {
-        return dateTime;
+    public String getTime() {
+        return time;
     }
 
-    public void setDateTime(LocalDateTime dateTime) {
-        this.dateTime = dateTime;
+    public void setTime(String time) {
+        this.time = time;
+    }
+
+    public String getProductId() {
+        return productId;
+    }
+
+    public void setProductId(String productId) {
+        this.productId = productId;
     }
 }

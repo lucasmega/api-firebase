@@ -10,8 +10,6 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 @Configuration
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
-    FirebaseEntryPoint entryPoint;
-    @Autowired
     FirebaseProvider provider;
     @Override
     protected void configure(HttpSecurity http) throws Exception {
